@@ -1,6 +1,10 @@
 let rec print l = match l with
   | [] -> ()
-  | h::t -> Printf.printf "%d " h; print t;;
+  | h::t -> let rec string_of_item = function
+    | x when x < 0 -> string_of_item (-x) ^ "^{-1}"
+    | x when abs(x) > 9 -> "x_{" ^ string_of_int(x) ^ "}"
+    | x -> "x_" ^ string_of_int(x) in
+    print_string (string_of_item h); print t;;
 
 let rec println l = 
   print l;
