@@ -1,4 +1,10 @@
+(library
+ (name groupcrypto)
+ (public_name groupcrypto)
+ (modules word))
+
 (executable
  (name main)
  (public_name groupcrypto)
- (libraries))
+ (modules main)
+ (libraries groupcrypto))
