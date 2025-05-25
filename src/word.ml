@@ -6,7 +6,7 @@ let rec print l = match l with
     | x -> "x_" ^ string_of_int(x) in
     print_string (string_of_item h); print t;;
 
-let rec println l = 
+let println l =
   print l;
   Printf.printf "\n"
 
@@ -55,6 +55,6 @@ let subword left right word =
 let find_neg word =
   let rec find_neg idx = function
     | [] -> -1
-    | h::t when h < 0 -> idx
-    | h::t -> find_neg (idx+1) t in
+    | x::_ when x < 0 -> idx
+    | _::xs -> find_neg (idx+1) xs in
   find_neg 0 word;;

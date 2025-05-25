@@ -24,3 +24,21 @@ setup.log
 
 # win executables
 *.exe
+
+# Dune build artifacts
+_build/
+_opam/
+*.install
+
+# Editor/IDE directories
+.vscode/
+.idea/
+
+# Dependency directories
+node_modules/
+
+# Log files
+*.log
+
+# OS generated files
+.DS_Store
